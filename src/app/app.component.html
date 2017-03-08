@@ -5,6 +5,7 @@
         
         <li routerLinkActive="active"><a routerLink="/login" >Login</a></li>
         <li routerLinkActive="active" ><a routerLink="/cursos" >Cursos</a></li>
+				        <li routerLinkActive="active" ><a [routerLink]="['curso',idCurso.value]" >Cursos com ID</a></li>
       </ul>
     </div>
 </nav>
@@ -18,7 +19,8 @@
 
 	<div class="row">
 	 <div class="col s12">
-	 	
+	 			<p>Entre curso ID</p>
+				 <input  #idCurso>
 	  		<router-outlet></router-outlet>
 	   
 	  </div>
