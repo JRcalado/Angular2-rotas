@@ -6,6 +6,7 @@ import { NgModule, Component } from '@angular/core';
 import { AlunosComponent } from './alunos.component';
 import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 import { AlunoFormComponent } from './aluno-form/aluno-form.component';
+import { AlunoDetalheResolver } from './guards/aluno-detalhe.resolver';
 
 
 
@@ -15,7 +16,9 @@ import { AlunoFormComponent } from './aluno-form/aluno-form.component';
         canActivateChild: [AlunosGuard],
         children:[
             {path: 'novo', component: AlunoFormComponent},
-            {path: ':id', component: AlunoDetalheComponent},
+            {path: ':id', component: AlunoDetalheComponent,
+                resolve: {aluno : AlunoDetalheResolver }
+            },
             {path: ':id/editar', component: AlunoFormComponent,
                 canDeactivate: [AlunosDeactivateGuard]
             }

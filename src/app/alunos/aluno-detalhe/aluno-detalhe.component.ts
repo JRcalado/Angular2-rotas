@@ -1,3 +1,4 @@
+import { Aluno } from './../aluno';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { AlunosService } from '../alunos.service';
@@ -13,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class AlunoDetalheComponent implements OnInit,OnDestroy {
 
-aluno: any ;
+aluno: Aluno ;
 inscricao: Subscription;
 
   constructor(
@@ -24,7 +25,7 @@ inscricao: Subscription;
 
   ngOnInit() {
        
-    this.inscricao = this.route.params.subscribe(
+    /*this.inscricao = this.route.params.subscribe(
 
       (params: any) => {
           let id = params['id'];
@@ -32,7 +33,19 @@ inscricao: Subscription;
           this.aluno = this.alunosService.getAluno(id);
       }
 
+    );*/
+
+    console.log('ngOnInit: AlunoDetalheComponent ');
+
+    this.inscricao = this.route.data.subscribe(
+      (info: {aluno : Aluno}) =>{
+        console.log('Recebendo o obj Aluno do resolver');
+        this.aluno= info.aluno;
+
+      }
+
     );
+
   }
 
 editarContato(){

@@ -23,6 +23,7 @@ import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso
 //import { CursosModule } from './cursos/cursos.module';
 //import { AlunosModule } from './alunos/alunos.module';
 import { AppRoutingModule } from './app.routing.module';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { AppRoutingModule } from './app.routing.module';
     AppComponent,
     HomeComponent,
     LoginComponent,
+    PaginaNaoEncontradaComponent,
     
     /*CursosComponent,
     CursoDetalheComponent,
